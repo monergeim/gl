@@ -1,6 +1,6 @@
 Short Description: This is interactive metrics script which use psutil - cross-platform library for retrieving information on running processes and system utilization.
 
-Full Description: #Where to get help: https://github.com/monergeim/metrics/wiki, https://pypi.org/help/, https://www.python.org/about/help/ or Stack Overflow
+Full Description: #Where to get help: the Docker Community Forums, the Docker Community Slack, https://pypi.org/help/, https://www.python.org/about/help/ or Stack Overflow
 
 #Where to file issues: https://github.com/monergeim/metrics/issues
 
@@ -8,18 +8,40 @@ Full Description: #Where to get help: https://github.com/monergeim/metrics/wiki,
 
 #Supported architectures: amd64, arm32v5, arm32v6, arm32v7, arm64v8, i386, ppc64le, s390x, windows-amd64
 
-#What is metrics script? Based on python and psutil open library From python perspective used 2 packages: psutil and argparse
+#What is metrics script: Based on python and psutil open library
 
-#How to use this script: mon.py [-h] arg
+#Prerequisites:
+On host should be installed:
+- docker
+- wget
+- git 2.10 or upper
+
+We have 2 options for use
+
+1.build image from git-hub
+whereis docker wget
+git --version
+wget https://raw.githubusercontent.com/monergeim/gl/master/metrics
+chmod u+x metrics
+docker build github.com/monergeim/gl -t monergeim/py-mon
+
+2. Check required apps, pull created image from docker-hub, download metrics bash script
+whereis docker wget
+wget https://raw.githubusercontent.com/monergeim/gl/master/metrics
+chmod u+x metrics
+docker pull monergeim/py-mon
+
+#How to use this script: ./metrics [-h] arg
 
 positional arguments: arg enter argument mem or cpu to see details
 
 optional arguments: -h, --help show this help message and exit
 
-The script require mandatory single parameter to specify which metrics set to print:
+The script require mandatory single argument to specify which metrics need to print:
 
 cpu - prints CPU metrics
 mem - prints RAM metrics
+
 #License: GPL
 
-#Docker image: https://hub.docker.com/r/monergeim/metrics/
+#Docker image: https://cloud.docker.com/u/monergeim/repository/docker/monergeim/py-mon
