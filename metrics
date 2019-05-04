@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -it --rm --name python-monitoring-script monergeim/py-mon python mon.py $1
