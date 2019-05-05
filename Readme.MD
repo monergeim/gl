@@ -18,14 +18,14 @@ On host should be installed:
 
 We have 2 options for use
 
-1.build image from git-hub
+1. Check required apps, download metrics bash script, build image from git-hub
 whereis docker wget
 git --version
 wget https://raw.githubusercontent.com/monergeim/gl/master/metrics
 chmod u+x metrics
 docker build github.com/monergeim/gl -t monergeim/py-mon
 
-2. Check required apps, pull created image from docker-hub, download metrics bash script
+2. Check required apps, download metrics bash script, pull created image from docker-hub
 whereis docker wget
 wget https://raw.githubusercontent.com/monergeim/gl/master/metrics
 chmod u+x metrics
@@ -41,6 +41,8 @@ The script require mandatory single argument to specify which metrics need to pr
 
 cpu - prints CPU metrics
 mem - prints RAM metrics
+
+e.g. ./metrics cpu  #if you need to check cpu info
 
 #License: GPL
 
