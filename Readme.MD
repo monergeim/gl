@@ -16,7 +16,7 @@ On host should be installed:
 - wget
 - git 2.10 or upper
 
-We have 2 options for use
+We have 2 options for preparations to use
 
 1. Check required apps, download metrics bash script, build image from git-hub
 whereis docker wget
